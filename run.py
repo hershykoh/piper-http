@@ -28,7 +28,7 @@ def run(*popenargs, **kwargs):
 
 # If no args are provided, explain
 if len(sys.argv) < 3:
-    print("Usage: python run.py <link> <target_folder>")
+    print("Usage: python3 run.py <link> <target_folder>")
     sys.exit(1)
 
 # Get link as sys.argv[1]
@@ -44,7 +44,7 @@ script_folder = os.path.dirname(os.path.realpath(__file__))
 download_script = os.path.join(script_folder, "download/download-piper-voices.py")
 
 # Download the model
-run(['python', download_script, link, target_folder])
+run(['python3', download_script, link, target_folder])
 
 # Join target_folder with the model name
 model_path = os.path.join(target_folder, "model.onnx")
@@ -52,8 +52,8 @@ model_path = os.path.join(target_folder, "model.onnx")
 # If the --speaker arg is provided, run the http server with the model and the speaker
 if len(sys.argv) > 3:
     speaker = sys.argv[3]
-    run(['python', '-m', 'piper.http_server', '-m', model_path, '-s', speaker,'--cuda'])
+    run(['python3', '-m', 'piper.http_server', '-m', model_path, '-s', speaker,'--cuda'])
     # sys.exit(0)
 else:
-    run(['python', '-m', 'piper.http_server', '-m', model_path,'--cuda'])
+    run(['python3', '-m', 'piper.http_server', '-m', model_path,'--cuda'])
     # sys.exit(0)

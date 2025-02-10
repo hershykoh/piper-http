@@ -17,7 +17,7 @@ import os
 
 # If no argument is given, print usage
 if len(sys.argv) < 3:
-    print("Usage: python download-piper-voice.py <link> <target_folder>")
+    print("Usage: python3 download-piper-voice.py <link> <target_folder>")
     sys.exit(1)
 
 link_model = sys.argv[1]
@@ -33,4 +33,4 @@ link_json = link_model.split('?')[0]
 link_json = link_json + ".json"
 
 # Use download.py to download the .onnx file and the .json file which is in this folder
-subprocess.run(['python', f"{folder}/download-model.py", link_model, link_json, target_folder])
+subprocess.run(['python3', f"{folder}/download-model.py", link_model, link_json, target_folder])
