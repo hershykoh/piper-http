@@ -10,8 +10,12 @@ WORKDIR /opt
 # RUN pip install --upgrade pip
 WORKDIR /opt/piper/src/python_run
 
+COPY http_server.py ./piper/
+
 # Install the package
-#RUN pip install -e .
+RUN   pip3 install --ignore-installed --no-cache-dir blinker && \
+        pip3 install -r requirements_http.txt && \
+        pip3 install --no-cache-dir --verbose --no-deps .[gpu,http]
 
 # Install the requirements
 #RUN pip install -r requirements.txt
