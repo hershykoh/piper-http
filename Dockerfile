@@ -35,7 +35,7 @@ COPY download /opt/download
 EXPOSE 5000
 
 # Create ENV that will be used in the run.py file to set the download link
-ENV MODEL_DOWNLOAD_LINK="https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/en/en_US/kusal/medium/en_US-kusal-medium.onnx?download=true"
+ENV MODEL_DOWNLOAD_LINK="https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/joe/medium/en_US-joe-medium.onnx?download=true"
 
 # Create ENV that will be used in the run.py file to set the target folder
 ENV MODEL_TARGET_FOLDER="/app/models"
