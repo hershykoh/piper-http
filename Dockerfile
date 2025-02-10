@@ -7,6 +7,7 @@ WORKDIR /app
 # Get the latest version of the code
 
 # Update pip and install the required packages
+RUN pip install --upgrade pip
 
 # Install wget pip package
 RUN pip install wget
