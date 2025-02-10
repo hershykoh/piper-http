@@ -7,7 +7,7 @@ WORKDIR /opt
 # Get the latest version of the code
 
 # Update pip and install the required packages
-RUN pip install --upgrade pip
+# RUN pip install --upgrade pip
 WORKDIR /opt/piper/src/python_run
 
 # Install the package
@@ -17,7 +17,7 @@ WORKDIR /opt/piper/src/python_run
 #RUN pip install -r requirements.txt
 
 # Install http server
-RUN pip install -r requirements_http.txt
+# RUN pip install -r requirements_http.txt
 
 # Install wget pip package
 RUN pip install wget
@@ -40,4 +40,4 @@ ENV MODEL_TARGET_FOLDER="/app/models"
 ENV SPEAKER="0"
 
 # Run the webserver with python run.py
-CMD python /opt/run.py $MODEL_DOWNLOAD_LINK $MODEL_TARGET_FOLDER $SPEAKER
+CMD python3 /opt/run.py $MODEL_DOWNLOAD_LINK $MODEL_TARGET_FOLDER $SPEAKER
