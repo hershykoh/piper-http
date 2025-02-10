@@ -11,7 +11,7 @@ RUN pip install --upgrade pip
 WORKDIR /opt/piper/src/python_run
 
 # Install the package
-RUN pip install -e .
+#RUN pip install -e .
 
 # Install the requirements
 RUN pip install -r requirements.txt
