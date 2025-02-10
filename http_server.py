@@ -114,8 +114,22 @@ def main() -> None:
             raise ValueError("No text provided")
 
         _LOGGER.debug("Synthesizing text: %s", text)
+        # Desired settings: 16-bit, 8kHz (or 16kHz), Mono
+        sample_width = 2  # 16 bits = 2 bytes
+        sample_rate = 16000  # 8kHz or 16kHz - change this if needed (e.g., 8000 for 8kHz)
+        num_channels = 1  # Mono
+
+        # Create the audio data in memory
         wav_io = io.BytesIO()
+
         with wave.open(wav_io, "wb") as wav_file:
+            # Set the parameters for the WAV file (16-bit, 16kHz Mono)
+            wav_file.setnchannels(num_channels)
+            wav_file.setsampwidth(sample_width)
+            wav_file.setframerate(sample_rate)
+
+            # Synthesize speech and write audio frames into the WAV file
+            # `voice.synthesize` should generate the audio in the expected format.
             voice.synthesize(text, wav_file, **synthesize_args)
 
         # Ensure the file pointer is at the beginning of the BytesIO object before sending
