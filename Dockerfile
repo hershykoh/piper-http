@@ -14,7 +14,7 @@ WORKDIR /opt/piper/src/python_run
 #RUN pip install -e .
 
 # Install the requirements
-RUN pip install -r requirements.txt
+#RUN pip install -r requirements.txt
 
 # Install http server
 RUN pip install -r requirements_http.txt
