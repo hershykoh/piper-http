@@ -26,11 +26,7 @@ RUN   pip3 install --ignore-installed --no-cache-dir blinker && \
 # Install wget pip package
 RUN pip install wget
 
-RUN python3 -m pip install opencv-python
-RUN pip install --upgrade pip setuptools
-
-RUN apt update
-RUN apt-get install python3.8-distutils
+RUN pip install --upgrade pip setuptools==59.0.1
 
 RUN pip install normalise  
 
