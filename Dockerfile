@@ -26,6 +26,8 @@ RUN   pip3 install --ignore-installed --no-cache-dir blinker && \
 # Install wget pip package
 RUN pip install wget
 
+RUN pip3 install normalise numpy==1.20 scikit-learn==0.22.1
+
 # Copy the run.py file into the container
 COPY run.py /opt
 # Copy the download folder into the container
