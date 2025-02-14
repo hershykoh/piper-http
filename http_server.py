@@ -16,11 +16,12 @@ from flask import Flask, request, send_file
 from . import PiperVoice
 from .download import ensure_voice_exists, find_voice, get_voices
 import nltk
-from normalise import tokenize_basic, normalise
-
 # Download necessary NLTK resources
 for dependency in ("brown", "names", "wordnet", "averaged_perceptron_tagger", "universal_tagset"):
     nltk.download(dependency)
+from normalise import tokenize_basic, normalise
+
+
 
 _LOGGER = logging.getLogger()
 
