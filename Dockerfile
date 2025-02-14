@@ -26,7 +26,7 @@ RUN   pip3 install --ignore-installed --no-cache-dir blinker && \
 # Install wget pip package
 RUN pip install wget
 
-RUN pip install --upgrade pip setuptools==59.0.2
+RUN pip install --upgrade pip setuptools==59.1.1
 
 RUN pip install normalise  
 
