@@ -26,6 +26,8 @@ RUN   pip3 install --ignore-installed --no-cache-dir blinker && \
 # Install wget pip package
 RUN pip install wget
 
+RUN pip install --upgrade pip setuptools
+
 RUN pip install normalise numpy==1.20 
 
 RUN  python3 --version
