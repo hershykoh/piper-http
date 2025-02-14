@@ -28,8 +28,7 @@ RUN pip install wget
 
 RUN pip install normalise numpy==1.20 
 
-RUN pip install pipwin
-RUN pipwin install scikit-learn==0.22.1
+RUN  python --version
 
 # Copy the run.py file into the container
 COPY run.py /opt
