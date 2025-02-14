@@ -32,7 +32,7 @@ RUN pip install normalise
 
 RUN pip install scikit-learn==0.22.1
 
-RUN pip install numpy==1.20
+#RUN pip install numpy==1.20
 
 # Copy the run.py file into the container
 COPY run.py /opt
