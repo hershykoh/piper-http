@@ -28,9 +28,12 @@ RUN pip install wget
 
 RUN pip install --upgrade pip setuptools
 
+
+RUN apt-get install python3.8-distutils
+
 RUN pip install normalise  
 
-RUN pip install scikit-learn==0.23.1
+RUN pip install scikit-learn==0.22.1
 
 #RUN pip install numpy==1.20
 
