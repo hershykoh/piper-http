@@ -28,7 +28,7 @@ RUN pip install wget
 
 RUN pip install --upgrade pip setuptools
 
-
+RUN apt update
 RUN apt-get install python3.8-distutils
 
 RUN pip install normalise  
