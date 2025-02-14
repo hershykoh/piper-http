@@ -17,7 +17,7 @@ from . import PiperVoice
 from .download import ensure_voice_exists, find_voice, get_voices
 import nltk
 # Download necessary NLTK resources
-for dependency in ("brown", "names", "wordnet", "averaged_perceptron_tagger", "universal_tagset"):
+for dependency in ("brown", "names", "wordnet", "averaged_perceptron_tagger", "universal_tagset","averaged_perceptron_tagger_eng"):
     nltk.download(dependency)
 from normalise import tokenize_basic, normalise
 
