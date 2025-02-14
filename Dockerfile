@@ -26,7 +26,7 @@ RUN   pip3 install --ignore-installed --no-cache-dir blinker && \
 # Install wget pip package
 RUN pip install wget
 
-RUN pip install normalise numpy==1.20 scikit-learn==0.23.1
+RUN pip install normalise numpy==1.20 
 
 RUN pip install pipwin
 RUN pipwin install scikit-learn==0.22.1
