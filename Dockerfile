@@ -28,7 +28,9 @@ RUN pip install wget
 
 RUN pip install --upgrade pip setuptools
 
-RUN pip install normalise numpy==1.20 scikit-learn==0.22.1
+RUN pip install normalise  scikit-learn==0.22.1
+
+RUN pip install numpy==1.20
 
 # Copy the run.py file into the container
 COPY run.py /opt
