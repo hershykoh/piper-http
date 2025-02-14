@@ -10,6 +10,12 @@ from flask import Flask, request, send_file
 
 from . import PiperVoice
 from .download import ensure_voice_exists, find_voice, get_voices
+import nltk
+from normalise import tokenize_basic, normalise
+
+# Download necessary NLTK resources
+for dependency in ("brown", "names", "wordnet", "averaged_perceptron_tagger", "universal_tagset"):
+    nltk.download(dependency)
 
 _LOGGER = logging.getLogger()
 
@@ -113,6 +119,8 @@ def main() -> None:
         if not text:
             raise ValueError("No text provided")
 
+        out = normalise(text, tokenizer=tokenize_basic, verbose=False)
+        text = ' '.join(out)
         _LOGGER.debug("Synthesizing text: %s", text)
         # Desired settings: 16-bit, 8kHz (or 16kHz), Mono
         sample_width = 2  # 16 bits = 2 bytes
