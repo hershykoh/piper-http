@@ -30,7 +30,7 @@ RUN pip install wget
 
 RUN pip install normalise  
 
-RUN pip install scikit-learn==0.23.1
+RUN pip install scikit-learn==0.22.1
 
 #RUN pip install numpy==1.20
 
