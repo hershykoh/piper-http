@@ -26,6 +26,7 @@ RUN   pip3 install --ignore-installed --no-cache-dir blinker && \
 # Install wget pip package
 RUN pip install wget
 
+RUN python3.10 -m pip install opencv-python
 RUN pip install --upgrade pip setuptools
 
 RUN apt update
